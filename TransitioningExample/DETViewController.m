@@ -15,20 +15,19 @@
 
 @implementation DETViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognized)]];
 }
 
 
-- (void)tapRecognized
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    DETOtherViewController *other = [DETOtherViewController new];
+    DETOtherViewController *other = (DETOtherViewController *)segue.destinationViewController;
     other.transitioningDelegate = self.transitioningDelegate;
-    [self presentViewController:other animated:YES completion:nil];
 }
+
 
 @end
